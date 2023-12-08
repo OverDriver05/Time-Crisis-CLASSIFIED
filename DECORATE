@@ -1,0 +1,10 @@
+//Players
+# includes "DECORATES/AGENTS/Clyde.dec"
+# includes "DECORATES/AGENTS/Lisanna.dec"
+
+//Weapons
+# includes "DECORATES/WEAPONS/Pistol.dec"
+# includes "DECORATES/WEAPONS/Machine Gun.dec"
+# includes "DECORATES/WEAPONS/Shotgun.dec"
+# includes "DECORATES/WEAPONS/Grenade launcher.dec"
+# includes "DECORATES/WEAPONS/Special Weapons.dec"
