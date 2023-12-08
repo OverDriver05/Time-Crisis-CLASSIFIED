@@ -1,9 +1,0 @@
-//Players
-# includes "DECORATE/AGENTS/Clyde.dec"
-# includes "DECORATE/AGENTS/Lisanna.dec"
-
-//Weapons
-# includes ""
-# includes ""
-# includes ""
-# includes ""
