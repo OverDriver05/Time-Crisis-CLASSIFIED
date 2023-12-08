@@ -1,0 +1,51 @@
+ACTOR DeagleAmmoLoaded : Ammo
+{
+  Inventory.PickupMessage "Bullets (+7)" 
+  Inventory.Amount 7
+  Inventory.MaxAmount 7
+  States
+  {
+  Spawn:
+    TNT1 A -1 
+    Stop
+  }
+}
+
+ACTOR DesertEagle : DoomWeapon replaces Pistol
+{
+  Weapon.SelectionOrder 1900
+  Weapon.AmmoUse 1
+  Weapon.AmmoType "DeagleAmmoLoaded"
+  Obituary "%o got magged with a Deagle."
+  Inventory.Pickupmessage "Whipped out the Desert Eagle!"
+  Tag "Desert Eagle"
+  States
+  {
+  Ready:
+    PISG A 1 A_WeaponReady
+    Loop
+  Deselect:
+    PISG A 1 A_Lower
+    Loop
+  Select:
+    PISG A 1 A_Raise
+    Loop
+  Fire:
+    PISG A 4
+    PISG B 6 A_FirePistol
+    PISG C 4
+    PISG B 5 A_ReFire
+    Goto Ready
+  Flash:
+    PISF A 7 Bright A_Light1
+    Goto LightDone
+  Reload:
+    PISG A 1 A_Lower
+	PISG A -1
+	PISG A 1 A_Raise
+    Loop
+  Spawn:
+    PIST A -1
+    Stop
+  }
+}
